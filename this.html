@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>This is not confused anymore</h1>
+    <p onclick="this.innerText= 'you clicked'">dont click</p>
+    <script>
+        const myObjecct = {
+            name: 'Thomas Bhuiyan',
+            getFullName: function () {
+                console.log(this);
+                return 'Mr.'+ this.name;
+            }
+        }
+        // myObjecct.getFullName()
+        const anotherObject = {
+            name: 'Butch'
+        }
+
+        // anotherObject.getFullName = myObjecct.getFullName;
+        // console.log(anotherObject.getFullName);
+
+        // myObjecct.getFullName();
+        // anotherObject.getFullName();
+
+        function add(a, b) {
+            console.log(this);
+            return a + b;
+        }
+        add(12, 13);
+
+        anotherObject.sum = add;
+        anotherObject.sum();
+    </script>
+</body>
+</html>
